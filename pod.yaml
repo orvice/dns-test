@@ -22,8 +22,4 @@ spec:
               "-l",
               "5000",
             ]
-
       restartPolicy: Never
-      dnsConfig:
-        options:
-          - name: single-request-reopen

@@ -6,8 +6,8 @@ COPY . .
 
 RUN go build -o /app/dns-test main.go
 
-#FROM debian:buster-slim
-FROM debian:buster
+FROM debian:buster-slim
+#FROM debian:buster
 
 COPY --from=builder /app/dns-test /app/dns-test
 
