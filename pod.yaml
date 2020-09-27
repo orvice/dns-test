@@ -12,7 +12,7 @@ spec:
           command:
             [
               "/app/dns-test",
-              "-h",
+              "-host",
               "redis.db",
               "-c",
               "200",
@@ -22,6 +22,7 @@ spec:
               "5000",
             ]
       restartPolicy: Never
+      imagePullPolicy: Always
       dnsConfig:
         options:
           - name: single-request-reopen
