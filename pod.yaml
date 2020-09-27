@@ -9,6 +9,7 @@ spec:
       containers:
         - name: hello
           image: orvice/dns-test
+          imagePullPolicy: Always
           command:
             [
               "/app/dns-test",
@@ -22,7 +23,6 @@ spec:
               "5000",
             ]
       restartPolicy: Never
-      imagePullPolicy: Always
       dnsConfig:
         options:
           - name: single-request-reopen
