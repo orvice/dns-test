@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: dns-test
+  namespace: default
+spec:
+  template:
+    spec:
+      containers:
+        - name: hello
+          image: orvice/dns-test
+          command:
+            [
+              "/app/dns-test",
+              "-h",
+              "redis.db",
+              "-c",
+              "200",
+              "-d",
+              "30",
+              "-l",
+              "5000",
+            ]
+      restartPolicy: Never
+      dnsConfig:
+        options:
+          - name: single-request-reopen
